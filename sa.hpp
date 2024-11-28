@@ -1,9 +1,9 @@
 #pragma once
-#include <unordered_set>
 #include <cassert>
 #include <string>
 #include <vector>
 #include <limits>
+#include <cstdint> 
 
 namespace stool
 {
