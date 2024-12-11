@@ -29,7 +29,7 @@ std::vector<uint64_t> construct_suffix_array(const std::vector<uint8_t> &text, b
 
 std::vector<uint64_t> construct_suffix_array(const std::vector<char> &text, bool show_message)
 {
-    if(text.size() > 1000000){
+    if(show_message){
         std::cout << "Constructing Suffix Array..." << std::flush;
     }
 
@@ -40,7 +40,7 @@ std::vector<uint64_t> construct_suffix_array(const std::vector<char> &text, bool
 
     divsufsort64((const unsigned char *)&text[0], (int64_t *)&sa[0], n);
 
-    if(text.size() > 1000000){
+    if(show_message){
         std::cout << " [END]" << std::endl;
     }
 
