@@ -29,7 +29,7 @@ std::vector<uint64_t> construct_suffix_array(const std::vector<uint8_t> &text, i
 
 
     if(message_paragraph >= 0 && text.size() > 0){
-        uint64_t sec_time = std::chrono::duration_cast<std::chrono::milliseconds>(st2 - st1).count();
+        uint64_t sec_time = std::chrono::duration_cast<std::chrono::seconds>(st2 - st1).count();
         uint64_t ms_time = std::chrono::duration_cast<std::chrono::milliseconds>(st2 - st1).count();
         uint64_t per_time = ((double) ms_time / (double)text.size()) * 1000000;
 
@@ -60,7 +60,7 @@ std::vector<uint64_t> construct_suffix_array(const std::vector<char> &text, int 
     st2 = std::chrono::system_clock::now();
 
     if(message_paragraph >= 0 && text.size() > 0){
-        uint64_t sec_time = std::chrono::duration_cast<std::chrono::milliseconds>(st2 - st1).count();
+        uint64_t sec_time = std::chrono::duration_cast<std::chrono::seconds>(st2 - st1).count();
         uint64_t ms_time = std::chrono::duration_cast<std::chrono::milliseconds>(st2 - st1).count();
         uint64_t per_time = ((double) ms_time / (double)text.size()) * 1000000;
 
@@ -86,7 +86,7 @@ std::vector<uint64_t> construct_suffix_array(const std::string &text, int messag
 
     st2 = std::chrono::system_clock::now();
     if(message_paragraph >= 0 && text.size() > 0){
-        uint64_t sec_time = std::chrono::duration_cast<std::chrono::milliseconds>(st2 - st1).count();
+        uint64_t sec_time = std::chrono::duration_cast<std::chrono::seconds>(st2 - st1).count();
         uint64_t ms_time = std::chrono::duration_cast<std::chrono::milliseconds>(st2 - st1).count();
         uint64_t per_time = ((double) ms_time / (double)text.size()) * 1000000;
 
