@@ -3,7 +3,7 @@
 #include "divsufsort64.h"
 #include <iostream>
 
-namespace liblivsufsort
+namespace libdivsufsort
 {
 
 std::vector<uint64_t> construct_suffix_array(const std::vector<uint8_t> &text, bool show_message)
