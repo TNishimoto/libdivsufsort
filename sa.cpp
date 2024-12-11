@@ -6,10 +6,10 @@
 namespace libdivsufsort
 {
 
-std::vector<uint64_t> construct_suffix_array(const std::vector<uint8_t> &text, bool show_message)
+std::vector<uint64_t> construct_suffix_array(const std::vector<uint8_t> &text, int message_paragraph)
 {
-    if(show_message){
-        std::cout << "Constructing Suffix Array..." << std::flush;
+    if(message_paragraph >= 0){
+        std::cout << std::string(' ', message_paragraph * 2) << "Constructing Suffix Array..." << std::flush;
     }
     std::vector<uint64_t> sa;
 
@@ -18,8 +18,8 @@ std::vector<uint64_t> construct_suffix_array(const std::vector<uint8_t> &text, b
 
     divsufsort64((const unsigned char *)&text[0], (int64_t *)&sa[0], n);
 
-    if(show_message){
-        std::cout << " [END]" << std::endl;
+    if(message_paragraph >= 0){
+        std::cout  << " [END]" << std::endl;
     }
 
     return sa;
@@ -27,10 +27,10 @@ std::vector<uint64_t> construct_suffix_array(const std::vector<uint8_t> &text, b
 
 }
 
-std::vector<uint64_t> construct_suffix_array(const std::vector<char> &text, bool show_message)
+std::vector<uint64_t> construct_suffix_array(const std::vector<char> &text, int message_paragraph)
 {
-    if(show_message){
-        std::cout << "Constructing Suffix Array..." << std::flush;
+    if(message_paragraph >= 0){
+        std::cout << std::string(' ', message_paragraph * 2) << "Constructing Suffix Array..." << std::flush;
     }
 
     std::vector<uint64_t> sa;
@@ -40,15 +40,15 @@ std::vector<uint64_t> construct_suffix_array(const std::vector<char> &text, bool
 
     divsufsort64((const unsigned char *)&text[0], (int64_t *)&sa[0], n);
 
-    if(show_message){
+    if(message_paragraph >= 0){
         std::cout << " [END]" << std::endl;
     }
 
     return sa;
 }
-std::vector<uint64_t> construct_suffix_array(const std::string &text, bool show_message){
-    if(show_message){
-        std::cout << "Constructing Suffix Array..." << std::flush;
+std::vector<uint64_t> construct_suffix_array(const std::string &text, int message_paragraph){
+    if(message_paragraph >= 0){
+        std::cout << std::string(' ', message_paragraph * 2) << "Constructing Suffix Array..." << std::flush;
     }
 
     std::vector<uint64_t> sa;
@@ -58,7 +58,7 @@ std::vector<uint64_t> construct_suffix_array(const std::string &text, bool show_
 
     divsufsort64((const unsigned char *)&text[0], (int64_t *)&sa[0], n);
 
-    if(show_message){
+    if(message_paragraph >= 0){
         std::cout << " [END]" << std::endl;
     }
 
